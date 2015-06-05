@@ -27,7 +27,7 @@ int IsolatedCPPSolution2(vector<int> multiples, int max)
 }
 
 // C++ based solution that uses the same algorithm that evan used, taking only
-// two multiples
+// two multiples, but not storing anything
 int IsolatedCPPSolution1(int mult1, int mult2, int max)
 {
 	int sum = 0;
@@ -35,6 +35,36 @@ int IsolatedCPPSolution1(int mult1, int mult2, int max)
 	{
 		if ((i % mult1 == 0) || (i % mult2 == 0))
 			sum += i;
+	}
+
+	return sum;
+}
+
+
+// Probably the closest in execution to your solution, Evan, but
+// without forgetting about cool C++ types and stuff.
+int IsolatedCPPSolution3(int mult1, int mult2, int max)
+{
+	vector<int> candidates;
+
+	for (int i = 0; i < 1000; i++)
+	{
+		if (i%3 == 0 || i%5 == 0)
+		{
+			candidates.push_back(i);
+		}
+	}
+
+//	for (vector<int> iterator it = candidates.begin(); it != candidates.end(); ++it)
+//  Here, we forego the use of itertors and use indices instead; they work just as well,
+//  and are a bit nicer to understand, and basically equivalent in this context.
+//  Realistically, anywhere I use iterators I should use const iterators in this problem,
+//  but we can cover that later :)
+
+	int sum = 0;
+	for (int i = 0; i < candidates.size(); ++i)
+	{
+		sum += candidates[i];
 	}
 
 	return sum;
@@ -61,7 +91,7 @@ int main()
 		}
 		cout << "The sum from Evan's solution is: " << sum << endl;
 
-		cout << "The sum from the first Boris CPP solution is: " << 
+		cout << "The sum from the first Boris CPP solution 1 is: " << 
 				IsolatedCPPSolution1(3, 5, 1000) << endl;
 
 		vector<int> input = {3,5}; //C++11 only, add the -std=c++11 to the g++ command; good practice for you :)
@@ -69,8 +99,12 @@ int main()
 		// Since we don't go ahead and reuse it, and I want to see how far I can stretch C++11, I got ahead and
 		// create a vector on the spot when shoving it into the function. The program eats it up anyway, even
 		// though my code editor highlights it and yells about killing babies and shit.
-		cout << "The sum from the second Boris CPP solution is: " << 
+		cout << "The sum from the second Boris CPP solution 2 is: " << 
 				IsolatedCPPSolution2(vector<int>{3,5}, 1000) << endl;
+
+		cout << "The sum from the first Boris CPP solution 3 is: " << 
+				IsolatedCPPSolution3(3, 5, 1000) << endl;
+
 
 		return 0;
 }
