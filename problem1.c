@@ -6,7 +6,22 @@
 using namespace std;
 int main()
 {
-    // 3 & 5 to 1000 add
+    int arr[1000];
+    int j = 0, sum = 0;
+   // 3 & 5 to 1000 add
+    cout << "we are running";
+    for(int i = 1; i< 1000; i++)
+        {
+            if (i/3 == 0 || i/5 == 0){
+                arr[j] = i;
+                j++;
+             }
+            for (int x; x<1000; x++)
+            {
+                sum += arr[x] 
+            }
+        }
+    cout << sum;
 
     return 0;
 }
