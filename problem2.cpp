@@ -8,10 +8,13 @@ arr1[1] = 2;
 int count = 0;
 for(int i=0; i< 31; i++){
     while(arr1[i]< 4000000){
+		cout << "My inner loop passed check, arr[i] is at " << arr1[i] << " and i = " << i << endl;
         arr1[2+i] = arr1[i] + arr1[++i];
+		cout << "I've generated a new number, i is now " << i << endl;
         cout << arr1[i]<< "\n";
         count++;
     }
+	cout << "I've broken out of the inner loop, my i is at " << i << " right now" << endl;
 }
 cout << count;
 /*
