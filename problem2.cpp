@@ -10,10 +10,8 @@ for(int i=0; i< 31; i++){
     while(arr1[i]< 4000000){
         arr1[2+i] = arr1[i] + arr1[++i];
         cout << arr1[i]<< "\n";
-        count++;
     }
 }
-cout << count;
 /*
 int j=0,sum;
 for(int i = 0; i < 50; i++){
