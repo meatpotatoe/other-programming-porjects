@@ -5,6 +5,7 @@ int main()
 long long int arr1[31] = {1,2};
 long long int arr2[31];
 int count = 0;
+
 for(int i=0; arr1[2+i] < 4000000 ; i++){
 	cout << "My inner loop passed check, arr[i] is " << arr1[i] << " and i = " << i << endl;
     cout << "now adding " << arr1[i] << " to " << arr1[1+i] << " into the element " << arr1[2+i] << endl;
