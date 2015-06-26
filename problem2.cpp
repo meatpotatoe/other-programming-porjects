@@ -8,26 +8,26 @@ int main()
     long long int arr2[31];
     int count = 0;
 
-    for(int i=0; arr1[2+i] < 4000000 ; i++){
-        cout << "My inner loop passed check, arr[i] is " << arr1[i] << " and i = " << i << endl;
-        cout << "now adding " << arr1[i] << " to " << arr1[1+i] << " into the element " << arr1[2+i] << endl;
+    for (int i = 0; arr1[2+i] < 4000000 ; i++) {
         arr1[2+i] = arr1[i] + arr1[1+i];
-        cout << "I've generated a new number, i is now " << arr1[2+i] << endl;
         count++;
     }
-    cout << "I'm out of the loop and my i is " << count << endl;
 
-    int j=0,sum = 0;
-    for(int i = 0; i < 2+count; i++){
-        cout << "this number is being tested " << arr1[i] << endl;
-        if(arr1[i]%2==0){
+    cout << "Generated: " << count + 2 << " #s" << endl;
+
+    int j=0, sum = 0;
+    for (int i = 0; i < count + 2; i++) {
+
+        cout << "Testing: " << arr1[i] << "%2 == 0" << endl;
+
+        if (arr1[i]%2 == 0) {
             arr2[j] = arr1[i];
-            cout << "this is the number that is going into the second array " << arr2[j] << endl;
+            cout << "arr2[" << j << "] = " << arr2[j] << endl;
             sum += arr2[j];
-            cout << "the sum is " << sum << endl;
+            cout << "Sum is now: " << sum << endl;
             j++;
         }
     }
-    cout << "this is the sum of the array " << sum << endl;
+    cout << "Final sum: " << sum << endl;
     return 0;
 }
